@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 
 import { validateEmail } from '../utils/helpers';
 
-
 function Form() {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
+  const [subject, setSubject] = useState('');
   const [query, setQuery] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
@@ -19,6 +19,8 @@ function Form() {
       setEmail(inputValue);
     } else if (inputType === 'name') {
       setName(inputValue);
+    } else if (inputType === 'subject') {
+      setSubject(inputValue);
     } else {
       setQuery(inputValue);
     }
@@ -30,7 +32,8 @@ function Form() {
       setSuccessMessage(`Thank you for your query ${name}`)
       setEmail('');
       setName('');
-      setQuery('')
+      setSubject('');
+      setQuery('');
     }
   };
 
@@ -76,6 +79,16 @@ function Form() {
           onChange={handleInputChange}
           type="text"
           placeholder="Name"
+          onBlur={handleChange}
+        />
+        </div>
+        <div className="form-group">
+        <input className='form-input'
+          value={subject}
+          name="subject"
+          onChange={handleInputChange}
+          type="text"
+          placeholder="Subject"
           onBlur={handleChange}
         />
         </div>
