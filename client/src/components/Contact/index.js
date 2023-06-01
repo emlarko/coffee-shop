@@ -28,14 +28,14 @@ transporter.verify(function(error, success) {
     var name = req.body.name
     var email = req.body.email
     var subject = req.body.subject
-    var message = req.body.message
+    var query = req.body.query
   
     var mail = {
       from: name, 
       email: email,
       to: 'emlarko11@gmail.com',
       subject: subject,
-      text: message
+      text: query
     }
   
     transporter.sendMail(mail, (err, data) => {
