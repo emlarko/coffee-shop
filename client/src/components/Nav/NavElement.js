@@ -7,7 +7,7 @@ export const PrimaryNav = styled.nav`
   display: flex;
   background: white;
   justify-content: space-between;
-  padding: 0.18rem calc((100vw - 1000px) / 2);
+  padding:  10px 15px;
 `
 export const MenuLink = styled(Link)`
   color: black;
