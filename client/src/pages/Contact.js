@@ -102,7 +102,7 @@ function Form() {
           onBlur={handleChange}
         />
         </div>
-        <button type="submit"  className="btn btn-primary" onClick={handleFormSubmit}>
+        <button type="submit" value="submit" className="btn btn-primary" onClick={handleFormSubmit}>
           Submit
         </button> <br />
         

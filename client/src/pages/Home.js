@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Container } from "../Styled";
 import { Row } from "../Styled"
 import { Col } from "../Styled"
-import CupWindow from '../assets/cup-window.jpg'
+import Cappuccino from '../assets/cappuccino.jpg'
 import Martini from '../assets/espresso-martini.jpg'
 
 const Image = styled.img `
@@ -22,7 +22,7 @@ const Home = () => {
   return (
     <Container>
       <Row>
-        <Image src={CupWindow}/>
+        <Image src={Cappuccino}/>
         <Title>
           <h1>Brunch</h1>
           <h3>Coffee / Breakfast / Cake</h3>
