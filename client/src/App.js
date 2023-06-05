@@ -5,6 +5,7 @@ import {
   ApolloProvider,
   ApolloClient,
   InMemoryCache,
+  ApolloProvider,
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
@@ -36,20 +37,20 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-  
-      {/* <Nav /> */}
       <Router>
-      <StoreProvider>
-        <Nav/>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/menu" element={<Menu />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/shop" element={<Shop />} />
-      </Routes>
-      </StoreProvider>
+        <div>
+          <StoreProvider>
+            <Nav />
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/menu" element={<Menu />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/shop" element={<Shop />} />
+              </Routes>
+            </StoreProvider>
+          </div>
       </Router>
-      </ApolloProvider>
+    </ApolloProvider>
   )
 }
 export default App

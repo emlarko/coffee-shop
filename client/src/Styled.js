@@ -6,6 +6,7 @@ export const Container = styled.div`
  
   display: flex;
   flex-direction: column;
+  font-family: 'Comfortaa', cursive;
 
   & h1 {
     font-family: "Bebas Neue", sans-serif;
@@ -17,8 +18,7 @@ export const Container = styled.div`
     font-size: 50px;
   }
 
-  & li {
-    font-family: 'Comfortaa', cursive;
+  & li { 
     font-size: 20px;
     list-style: none;
   }
@@ -27,6 +27,7 @@ export const Container = styled.div`
 
 export const Row = styled.div`
   display: flex;
+  flex-wrap: wrap;
 `
 
 export const Col = styled.div`
