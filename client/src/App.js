@@ -2,6 +2,7 @@ import React from 'react'
 import Nav from './components/Nav'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import {
+  ApolloProvider,
   ApolloClient,
   InMemoryCache,
   createHttpLink,
@@ -34,7 +35,8 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <>
+    <ApolloProvider client={client}>
+  
       {/* <Nav /> */}
       <Router>
       <StoreProvider>
@@ -47,7 +49,7 @@ function App() {
       </Routes>
       </StoreProvider>
       </Router>
-    </>
+      </ApolloProvider>
   )
 }
 export default App
