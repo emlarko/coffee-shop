@@ -2,6 +2,7 @@ import React from 'react'
 import Nav from './components/Nav'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import {
+  ApolloProvider,
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
