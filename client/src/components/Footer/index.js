@@ -7,14 +7,11 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 const StyledFooter = styled.footer`
 font-family: 'Comfortaa', cursive;
-width: 30%;
-margin: 0 auto;
-display; flex;
-text-align: center;
-position: relative;
-top: 20rem;
+display: flex;
+flex-direction: column;
 justify-content: center;
-
+align-items: center;
+text-align: center;
 & a {
     color: inherit;
     &:hover {
@@ -23,11 +20,10 @@ justify-content: center;
   }
 `
 const StyledIcon = styled.a`
-padding: 2rem;
-margin: 1em auto;
 display: flex;
-justify-content: space-evenly;
 align-items: center;
+justify-content: space-evenly;
+width: 100px;
 `
 const Footer = () => {
   return (
