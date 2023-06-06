@@ -11,11 +11,44 @@ const Image = styled.img `
   position: relative;
 `
 const Title = styled.div `
-  padding: 10px;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  color: white;
+font-family: "Bebas Neue", sans-serif;
+padding: 10px;
+position: absolute;
+display: flex;
+flex-direction: column;
+color: white;
+  @media screen and (min-width: 1201px){
+    & h1 {
+      font-size: 120px;
+    }
+    & h3 {
+      font-size: 80px;
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    & h1 {
+      font-size: 100px;
+    }
+    & h3 {
+      font-size: 50px;
+    }
+  }
+  @media screen and (max-width: 1024px){
+    & h1 {
+      font-size: 80px;
+    }
+    & h3 {
+      font-size: 30px;
+    }
+  }
+  @media screen and (max-width: 768px){
+    & h1 {
+      font-size: 50px;
+    }
+    & h3 {
+      font-size: 30px;
+    }
+  }
 `
 
 const Home = () => {
@@ -37,7 +70,7 @@ const Home = () => {
         </HomeRow>
         <HomeRow>
           <Col size={1}>
-          <h3>Opening Times</h3>
+          <h1>Opening Times</h1>
           <ul>
             <li>Monday - Thursday   8:30am - 4pm</li>
             <li>Friday  8:30am - 10:00pm</li>
