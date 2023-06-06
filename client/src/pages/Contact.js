@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-
 import { validateEmail } from '../utils/helpers';
+import { useMutation } from '@apollo/client';
+import { SEND_MAIL } from '../utils/mutations';
 
 function Form() {
   const [email, setEmail] = useState('');
@@ -9,6 +10,8 @@ function Form() {
   const [query, setQuery] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+
+  const [sendMail, { error }] = useMutation(SEND_MAIL);
 
   const handleInputChange = (e) => {
     const { target } = e;
@@ -26,14 +29,21 @@ function Form() {
     }
   };
 
-   const handleFormSubmit = (e) => {
+   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    if (!errorMessage) {
-      setSuccessMessage(`Thank you for your query ${name}`)
+
+    try {
+      const mutationResponse = await sendMail({
+        variables: { email: email, name: name, subject: subject, query: query},
+      });
+      setSuccessMessage(`Thank you for your query ${name}`);
       setEmail('');
       setName('');
       setSubject('');
       setQuery('');
+
+    } catch (e) {
+      console.log(e)
     }
   };
 

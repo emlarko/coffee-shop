@@ -49,3 +49,15 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+
+export const SEND_MAIL = gql`
+  mutation sendMail($email: String!, $name: String!, $subject: String!, $query: String!) {
+    sendMail(email: $email, name: $name, subject: $subject, query: $query) {
+      email
+      name
+      subject
+      query
+    }
+  }
+`;
