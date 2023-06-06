@@ -4,8 +4,29 @@ import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
 
-import { Container } from "../Styled";
-import { Row } from "../Styled"
+import styled from 'styled-components';
+import { Container, Row } from "../Styled";
+
+const StyledForm = styled.form`
+  min-width: 400px;
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0px auto;
+`
+const StyledLabel = styled.label`
+  display: block;
+  margin: 10px;
+`
+
+const StyledInput = styled.input`
+  font-family: 'Comfortaa', cursive;
+  font-size: 15px;
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+`
 
 function Signup(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -35,13 +56,12 @@ function Signup(props) {
 
   return (
     <Container>
-      <Link to="/login">← Go to Login</Link>
-
       <h3>Signup</h3>
-      <form onSubmit={handleFormSubmit}>
+      <StyledForm onSubmit={handleFormSubmit}>
+      <p>Already have an account?</p><Link to="/login">Login Instead</Link>
         <Row>
-          <label htmlFor="firstName">First Name:</label>
-          <input
+          <StyledLabel htmlFor="firstName">First Name:</StyledLabel>
+          <StyledInput
             placeholder="First"
             name="firstName"
             type="firstName"
@@ -50,8 +70,8 @@ function Signup(props) {
           />
        </Row>
        <Row>
-          <label htmlFor="lastName">Last Name:</label>
-          <input
+          <StyledLabel htmlFor="lastName">Last Name:</StyledLabel>
+          <StyledInput
             placeholder="Last"
             name="lastName"
             type="lastName"
@@ -60,8 +80,8 @@ function Signup(props) {
           />
         </Row>
         <Row>
-          <label htmlFor="email">Email:</label>
-          <input
+          <StyledLabel htmlFor="email">Email:</StyledLabel>
+          <StyledInput
             placeholder="youremail@email.com"
             name="email"
             type="email"
@@ -70,8 +90,8 @@ function Signup(props) {
           />
         </Row>
         <Row>
-          <label htmlFor="pwd">Password:</label>
-          <input
+          <StyledLabel htmlFor="pwd">Password:</StyledLabel>
+          <StyledInput
             placeholder="******"
             name="password"
             type="password"
@@ -82,7 +102,7 @@ function Signup(props) {
         <Row>
           <button type="submit">Submit</button>
         </Row>
-      </form>
+      </StyledForm>
     </Container>
   );
 }

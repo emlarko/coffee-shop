@@ -4,9 +4,13 @@ import CategoryMenu from "../components/CategoryMenu";
 import Cart from "../components/Cart";
 
 import styled from 'styled-components'
-import { Container } from "../Styled";
+import { Container, Row } from "../Styled";
 
 import Oddkin from "../assets/oddkin-logo.webp"
+
+const Background = styled.div`
+  background-color: #efe5da;
+`
 
 const Image = styled.img `
   width: 30%;
@@ -19,8 +23,11 @@ const Description = styled.div`
 
 const Shop = () => {
     return (
+      <Background>
       <Container>
+        <Row><Cart />
         <Image src ={Oddkin}/>
+        </Row>
         <Description>
         <p>
           Discover a collection of the very best specialty coffee - sourced, roasted and packed with love by us in Bristol. <br />
@@ -30,8 +37,8 @@ const Shop = () => {
         </Description>
         <CategoryMenu />
         <ProductList />
-        <Cart />
-      </Container>
+        </Container>
+      </Background>
     );
   };
   

@@ -1,44 +1,62 @@
 import React, { useState } from 'react';
 import styled from 'styled-components'
-import { Container } from "../Styled";
-import { Footer } from "../Styled";
 import Coffee from '../assets/coffee-menu.jpg'
 import Brunch from '../assets/brunch-menu.JPG'
 import Cocktail from '../assets/cup-cocktail.jpg.jpg'
 import Beer from '../assets/cup-beer.jpg.jpg'
+import Banner from '../assets/flat-white.jpg'
+
+const Container = styled.div`
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  font-family: 'Comfortaa', cursive;
+`
+
+const BannerImage = styled.img `
+  width: 100%;
+  position: relative;
+`
 
 const Button = styled.button`
-  background: grey;
+font-family: "Bebas Neue", sans-serif;
+  font-size: 30px;
+  background: #217262;
   border-radius: 50%;
-  border:none;
-  color: black;
+  border: 0px;
+  color: white;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  position: relative;
   padding:20px;
   margin:auto;
-  font-size: 16px;
   cursor: pointer;
-  width:8%
+  width: 140px;
+  height: 140px;
+  &:hover,
+  &.active {
+    background: #5DB7A5;
+  }
   `
-  const ButtonGroup = styled.div`
+const ButtonGroup = styled.div`
   display: flex;
   text-align: center;
-  margin-top: 10%;
-
+  margin-top: 10px;
 `
 const Image = styled.img `
   width: 40%;
   border-radius: 8px;
   padding: 5px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  margin: 40px auto;
   `
-  const Description = styled.div`
-  margin: 5px auto;
-  text-align: center
+const Description = styled.div`
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 60px;
+  padding: 10px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  color: white;
 `
 
 function Menu() {
@@ -56,25 +74,23 @@ function Menu() {
     }
 
   return (
-    
     <Container>
-
+    <BannerImage src={Banner}/>
         <Description>
         <p>
-          Cup brings a casual dining experience to the neighbourhood of Hagley. <br />
+          Cup brings a casual dining experience to the neighborhood of Hagley. <br />
           Expect pop-ups from the best street food traders around!! <br />
-          The only big decision, do you eat in or takeway??!!
+          The only big decision, do you eat in or takeaway??!!
         </p>
-        </Description>
+          </Description>
         <ButtonGroup>
         <Button onClick={() => selectMenuImage('coffee')}>Coffee</Button>
         <Button onClick={() => selectMenuImage('brunch')}>Brunch</Button>
         <Button onClick={() => selectMenuImage('cocktail')}>Cocktails</Button>
-        <Button onClick={() => selectMenuImage('beer')}>Beer/Wine</Button>
+        <Button onClick={() => selectMenuImage('beer')}>Beer &<br />Wine</Button>
         </ButtonGroup>
       
       <Image src={selectedMenuImage} />
-
     </Container>
     
   )

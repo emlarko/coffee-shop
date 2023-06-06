@@ -7,7 +7,12 @@ import CartItem from '../CartItem';
 import Auth from '../../utils/auth';
 import { useStoreContext } from '../../utils/GlobalState';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
-import './style.css';
+
+import { CartCard, CartClose, CartClosed } from './CartElement'
+import { Row } from '../../Styled'
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
@@ -62,19 +67,17 @@ const Cart = () => {
 
   if (!state.cartOpen) {
     return (
-      <div className="cart-closed" onClick={toggleCart}>
-        <span role="img" aria-label="trash">
-          🛒
-        </span>
-      </div>
+      <CartClosed onClick={toggleCart}>
+        <FontAwesomeIcon icon={faCartShopping} size="2xl" />
+      </CartClosed>
     );
   }
 
   return (
-    <div className="cart">
-      <div className="close" onClick={toggleCart}>
+    <CartCard>
+      <CartClose onClick={toggleCart}>
         [close]
-      </div>
+      </CartClose>
       <h2>Shopping Cart</h2>
       {state.cart.length ? (
         <div>
@@ -82,7 +85,7 @@ const Cart = () => {
             <CartItem key={item._id} item={item} />
           ))}
 
-          <div className="flex-row space-between">
+          <Row>
             <strong>Total: ${calculateTotal()}</strong>
 
             {Auth.loggedIn() ? (
@@ -90,14 +93,14 @@ const Cart = () => {
             ) : (
               <span>(log in to check out)</span>
             )}
-          </div>
+          </Row>
         </div>
       ) : (
-        <h3>
+        <h2>
           You haven't added anything to your cart yet!
-        </h3>
+        </h2>
       )}
-    </div>
+    </CartCard>
   );
 };
 
