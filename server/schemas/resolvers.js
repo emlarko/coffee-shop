@@ -1,7 +1,9 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Product, Category, Order, Contact } = require('../models');
+const { User, Product, Category, Order } = require('../models');
 const { signToken } = require('../utils/auth');
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+const nodemailer = require('nodemailer');
+
 
 const resolvers = {
   Query: {
@@ -136,6 +138,43 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+    sendMail: async (parent, { subject, name, query, email }) => {
+
+      const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          type: 'OAuth2',
+          user: process.env.MAIL_USERNAME,
+          pass: process.env.MAIL_PASSWORD,
+          clientId: process.env.OAUTH_CLIENTID,
+          clientSecret: process.env.OAUTH_CLIENT_SECRET,
+          refreshToken: process.env.OAUTH_REFRESH_TOKEN
+        }
+      });
+    
+      const emailHtml = `    
+        <Html lang="en">
+          <div>${subject}</div>
+          <div>${name}</div>
+          <div>${query}</div>
+        </Html>
+      `
+    
+        const options = {
+        from: email,
+        to: 'emlarko11@gmail.com',
+        subject: subject,
+        html: emailHtml,
+      };
+    
+      transporter.sendMail(options, function(err, data) {
+        if (err) {
+          console.log("Error " + err);
+        } else {
+          console.log("Email sent successfully");
+        }
+      });
     }
   }
 };
