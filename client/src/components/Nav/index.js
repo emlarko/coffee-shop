@@ -1,10 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { PrimaryNav, MenuLink, Menu, Hamburger } from './NavElement'
 import styled from 'styled-components'
 import Logo from '../../assets/cup-logo.jpg'
 
 const Image = styled.img `
-
+ width: 100px;
 `
 
 const Navbar = () => {
@@ -28,7 +29,7 @@ const Navbar = () => {
             Login
           </MenuLink>
         </Menu>
-      <Image src={Logo}/>
+      <Link to="/"><Image src={Logo}/></Link>
       </PrimaryNav>
   )
 }

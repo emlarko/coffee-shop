@@ -4,8 +4,29 @@ import { Link } from 'react-router-dom';
 import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';
 
-import { Container } from "../Styled";
-import { Row } from "../Styled"
+import styled from 'styled-components'
+import { Container, Row } from "../Styled";
+
+const StyledForm = styled.form`
+  min-width: 400px;
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0px auto;
+`
+const StyledLabel = styled.label`
+  display: block;
+  margin: 10px;
+`
+
+const StyledInput = styled.input`
+  font-family: 'Comfortaa', cursive;
+  font-size: 15px;
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+`
 
 function Login(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -34,13 +55,12 @@ function Login(props) {
 
   return (
     <Container>
-      <Link to="/signup">← Go to Signup</Link>
-
       <h3>Login</h3>
-      <form onSubmit={handleFormSubmit}>
+      <StyledForm onSubmit={handleFormSubmit}>
+      <p>Don't have an account?</p><Link to="/signup">Signup Instead</Link>
         <Row>
-          <label htmlFor="email">Email address:</label>
-          <input
+          <StyledLabel htmlFor="email">Email address:</StyledLabel>
+          <StyledInput
             placeholder="youremail@email.com"
             name="email"
             type="email"
@@ -49,8 +69,8 @@ function Login(props) {
           />
         </Row>
         <Row>
-          <label htmlFor="pwd">Password:</label>
-          <input
+          <StyledLabel htmlFor="pwd">Password:</StyledLabel>
+          <StyledInput
             placeholder="******"
             name="password"
             type="password"
@@ -66,7 +86,7 @@ function Login(props) {
         <Row>
           <button type="submit">Submit</button>
         </Row>
-      </form>
+      </StyledForm>
       </Container>
   );
 }

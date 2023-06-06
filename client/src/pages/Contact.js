@@ -3,6 +3,56 @@ import { validateEmail } from '../utils/helpers';
 import { useMutation } from '@apollo/client';
 import { SEND_MAIL } from '../utils/mutations';
 
+import styled from 'styled-components'
+import { Container, Col, Row } from '../Styled'
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
+
+const StyledForm = styled.form`
+  min-width: 400px;
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0px auto;
+`
+const StyledLabel = styled.label`
+  display: block;
+  margin: 10px;
+`
+
+const StyledInput = styled.input`
+  font-family: 'Comfortaa', cursive;
+  font-size: 15px;
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+`
+const StyledText = styled.textarea`
+  font-family: 'Comfortaa', cursive;
+  font-size: 15px;
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 100px;
+`
+const StyledDiv = styled.div`
+  
+  
+  & a {
+    text-decoration: none;
+  }
+
+  & li {
+    padding: 20px;
+  } 
+`
+const Icon = styled.span`
+  padding: 20px;
+`
+
 function Form() {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
@@ -66,24 +116,26 @@ function Form() {
   };
 
   return (
-    <>
-        <h2 className='content'>Contact</h2>
+    <Container>
+      <Row>
+        <h3>Contact</h3>
+      </Row>
         <hr />
-        <form className="form">
-      
+        <Row>
+        <Col size={2}>
+        <StyledForm>
       <p>Please fill out the below form with any queries:</p>
-        <div className="form-group">
-        <input className='form-input' 
+      <StyledLabel>Email:</StyledLabel>
+        <StyledInput
           value={email}
           name="email"
           onChange={handleInputChange}
           type="email"
-          placeholder="Email"
+          placeholder="youremail@email.com"
           onBlur={handleChange}
         />
-        </div>
-        <div className="form-group">
-        <input className='form-input'
+        <StyledLabel>Name:</StyledLabel>
+        <StyledInput
           value={name}
           name="name"
           onChange={handleInputChange}
@@ -91,9 +143,8 @@ function Form() {
           placeholder="Name"
           onBlur={handleChange}
         />
-        </div>
-        <div className="form-group">
-        <input className='form-input'
+        <StyledLabel>Subject:</StyledLabel>
+        <StyledInput
           value={subject}
           name="subject"
           onChange={handleInputChange}
@@ -101,9 +152,8 @@ function Form() {
           placeholder="Subject"
           onBlur={handleChange}
         />
-        </div>
-        <div className="form-group">
-        <textarea className='form-input' rows="8"
+        <StyledLabel>Query:</StyledLabel>
+        <StyledText
           value={query}
           name="query"
           onChange={handleInputChange}
@@ -111,11 +161,11 @@ function Form() {
           placeholder="Query"
           onBlur={handleChange}
         />
-        </div>
+        <div>
         <button type="submit" value="submit" className="btn btn-primary" onClick={handleFormSubmit}>
           Submit
         </button> <br />
-        
+        </div>
         {errorMessage && (
         <div>
           <p className="error-text">{errorMessage}</p>
@@ -126,8 +176,18 @@ function Form() {
           <p className="success-text">{successMessage}</p>
         </div>
       )}
-      </form>
-    </>
+      </StyledForm>
+      </Col>
+      <Col size={1}>
+        <StyledDiv>
+        <ul className='contact'>
+          <li><a href="mailto:emilylarkin11@hotmail.co.uk"><Icon><FontAwesomeIcon icon={faEnvelope} size="2xl"/></Icon>Send us an email</a></li>
+          <li><Icon><FontAwesomeIcon icon={faPhone} size="2xl" /></Icon>0102184299</li>
+        </ul>
+        </StyledDiv>
+      </Col>
+      </Row>
+    </Container>
     );
 }
 

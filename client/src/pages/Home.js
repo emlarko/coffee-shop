@@ -1,7 +1,7 @@
 import React from "react";
 import styled from 'styled-components'
 import { Container } from "../Styled";
-import { Row } from "../Styled"
+import { HomeRow } from "../Styled"
 import { Col } from "../Styled"
 import Cappuccino from '../assets/cappuccino.jpg'
 import Martini from '../assets/espresso-martini.jpg'
@@ -21,21 +21,21 @@ const Title = styled.div `
 const Home = () => {
   return (
     <Container>
-      <Row>
+      <HomeRow>
         <Image src={Cappuccino}/>
         <Title>
           <h1>Brunch</h1>
           <h3>Coffee / Breakfast / Cake</h3>
         </Title>
-        </Row>
-        <Row>
+        </HomeRow>
+        <HomeRow>
         <Image src={Martini}/>
         <Title>
           <h1>Weekend Evening</h1>
           <h3>Craft Beer / Cocktails / Street Food</h3>
         </Title> 
-        </Row>
-        <Row>
+        </HomeRow>
+        <HomeRow>
           <Col size={1}>
           <h3>Opening Times</h3>
           <ul>
@@ -46,7 +46,7 @@ const Home = () => {
             <li>Brunch is served Wednesday - Sunday 9am - 2pm</li>
           </ul>
           </Col>
-        </Row>
+        </HomeRow>
       </Container>
   )
 };
