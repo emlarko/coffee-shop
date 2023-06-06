@@ -141,8 +141,11 @@ const resolvers = {
     },
     sendMail: async (parent, { subject, name, query, email }) => {
 
-      const transporter = nodemailer.createTransport({
+      const transporter = await nodemailer.createTransport({
         service: 'gmail',
+        tls:{
+          rejectUnauthorized:false
+      },
         auth: {
           type: 'OAuth2',
           user: process.env.MAIL_USERNAME,
@@ -163,16 +166,18 @@ const resolvers = {
     
         const options = {
         from: email,
-        to: 'emlarko11@gmail.com',
+        to: process.env.MAIL_USERNAME,
         subject: subject,
         html: emailHtml,
       };
     
-      transporter.sendMail(options, function(err, data) {
+      await transporter.sendMail(options, function(err, data) {
         if (err) {
           console.log("Error " + err);
+          return { err }
         } else {
           console.log("Email sent successfully");
+          return "Email sent successfully"
         }
       });
     }

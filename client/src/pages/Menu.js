@@ -50,13 +50,25 @@ const Image = styled.img `
   `
 const Description = styled.div`
   font-family: "Bebas Neue", sans-serif;
-  font-size: 60px;
+  font-size: 50px;
   padding: 10px;
   position: absolute;
   display: flex;
   flex-direction: column;
   margin: 20px auto;
   color: white;
+  @media screen and (min-width: 1201px){
+    font-size: 50px;
+  }
+  @media screen and (max-width: 1200px) {
+    font-size: 35px;
+  }
+  @media screen and (max-width: 1024px){
+    font-size: 30px;
+  }
+  @media screen and (max-width: 768px){
+    font-size: 20px;
+  }
 `
 
 function Menu() {

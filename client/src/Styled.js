@@ -8,15 +8,8 @@ export const Container = styled.div`
   flex-direction: column;
   font-family: 'Comfortaa', cursive;
 
-  & h1 {
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 100px;
-  }
 
-  & h3 {
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 50px;
-  }
+ 
 
   & li { 
     font-size: 20px;
