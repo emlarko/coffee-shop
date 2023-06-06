@@ -1,5 +1,6 @@
 import React from 'react'
 import Nav from './components/Nav'
+import Footer from './components/Footer'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import {
   ApolloProvider,
@@ -48,6 +49,7 @@ function App() {
               </Routes>
             </StoreProvider>
           </div>
+          <Footer/>
       </Router>
     </ApolloProvider>
   )
