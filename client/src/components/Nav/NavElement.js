@@ -10,6 +10,8 @@ export const PrimaryNav = styled.nav`
   padding:  10px 15px;
 `
 export const MenuLink = styled(Link)`
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 25px;
   color: black;
   display: flex;
   cursor: pointer;
