@@ -5,6 +5,8 @@ import { HomeRow } from "../Styled"
 import { Col } from "../Styled"
 import Cappuccino from '../assets/cappuccino.jpg'
 import Martini from '../assets/espresso-martini.jpg'
+import Map from '../components/Map'
+
 
 const Image = styled.img `
   width: 100%;
@@ -79,7 +81,13 @@ const Home = () => {
             <li>Brunch is served Wednesday - Sunday 9am - 2pm</li>
           </ul>
           </Col>
+          <Col size={1}>
+            
+          <Map />
+          
+          </Col>
         </HomeRow>
+        
       </Container>
   )
 };
