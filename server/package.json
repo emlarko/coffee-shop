@@ -20,7 +20,9 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^7.0.2",
     "nodemailer": "^6.9.3",
-    "stripe": "^8.67.0"
+    "stripe": "^8.67.0",
+    "@react-email/html": "^0.0.4",
+    "@react-email/render": "^0.0.7"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"
