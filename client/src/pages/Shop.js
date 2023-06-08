@@ -17,8 +17,10 @@ const Image = styled.img `
   margin: 5px auto;
 `
 const Description = styled.div`
-  margin: 5px auto;
-  text-align: center
+  margin: 0px auto;
+  text-align: center;
+  font-size: 20px;
+  width: 90%;
 `
 
 const Shop = () => {

@@ -7,6 +7,11 @@ import {
 } from '../../utils/actions';
 import { QUERY_CATEGORIES } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
+import styled from 'styled-components';
+
+const Row = styled.div`
+  margin: 0px auto;
+`
 
 function CategoryMenu() {
   const [state, dispatch] = useStoreContext();
@@ -42,7 +47,7 @@ function CategoryMenu() {
   };
 
   return (
-    <div>
+    <Row>
       <h2>Choose a Category:</h2>
       {categories.map((item) => (
         <button
@@ -54,7 +59,7 @@ function CategoryMenu() {
           {item.name}
         </button>
       ))}
-    </div>
+    </Row>
   );
 }
 

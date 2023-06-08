@@ -5,12 +5,7 @@ import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
 
-import { Image, Card } from './ProductItem'
-
-// import styled from 'styled-components'
-import { Container } from "../../Styled";
-import { Row } from "../../Styled"
-// import { Col } from "../Styled"
+import { Image, Card, Price, Row } from './ProductItem'
 
 function ProductItem(item) {
   const [state, dispatch] = useStoreContext();
@@ -56,10 +51,12 @@ function ProductItem(item) {
       <p>{name}</p>
     </Link>
       <div>
-        <div>{quantity} {pluralize("item", quantity)} in stock</div>
-        <span>${price}</span>
+        <Price>£{price}</Price>
       </div>
-    <button onClick={addToCart}>Add to cart</button>
+    <Row>
+      <button onClick={addToCart}>Add to cart</button>
+      <div>{quantity} {pluralize("item", quantity)} in stock</div>
+    </Row>
   </Card>
   );
 }
