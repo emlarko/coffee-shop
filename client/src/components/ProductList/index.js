@@ -6,10 +6,10 @@ import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCTS } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 
-// import styled from 'styled-components'
-// import { Container } from "../../Styled"
 import { Row } from "../../Styled"
-// import { Col } from "../Styled"
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 
 
 function ProductList() {
@@ -50,7 +50,6 @@ function ProductList() {
 
   return (
     <div>
-      <h2>Our Products:</h2>
       {state.products.length ? (
         <Row>
           {filterProducts().map((product) => (
@@ -67,7 +66,7 @@ function ProductList() {
       ) : (
         <h3>You haven't added any products yet!</h3>
       )}
-      {/* {loading ? <img src={spinner} alt="loading" /> : null} */}
+     {loading ? <FontAwesomeIcon icon={faSpinner} spinPulse size="2xl" /> : null}
     </div>
   );
 }

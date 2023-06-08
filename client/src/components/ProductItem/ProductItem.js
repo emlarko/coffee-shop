@@ -10,7 +10,21 @@ export const Card = styled.div`
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     margin: 20px auto;
+    & button {
+        width: 200px;
+    }
+`
+
+export const Row = styled.div`
+    display: flex;
+    flex-wrap: wrap;   
+    align-items: center; 
+`
+
+export const Price = styled.span`
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 20px;
 `

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { loadStripe } from '@stripe/stripe-js';
 import { useLazyQuery } from '@apollo/client';
 import { QUERY_CHECKOUT } from '../../utils/queries';
@@ -86,12 +87,12 @@ const Cart = () => {
           ))}
 
           <Row>
-            <strong>Total: ${calculateTotal()}</strong>
+            <strong>Total: £{calculateTotal()}</strong>
 
             {Auth.loggedIn() ? (
               <button onClick={submitCheckout}>Checkout</button>
             ) : (
-              <span>(log in to check out)</span>
+              <Link to="/login">(log in to check out)</Link>
             )}
           </Row>
         </div>

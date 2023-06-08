@@ -11,7 +11,7 @@ import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
 
 const StyledForm = styled.form`
   min-width: 400px;
-  background-color: #f4f4f4;
+  background-color: #efe5da;
   padding: 10px;
   border-radius: 5px;
   margin: 0px auto;
