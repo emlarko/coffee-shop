@@ -39,8 +39,8 @@ const StyledText = styled.textarea`
   height: 100px;
 `
 const StyledDiv = styled.div`
-  
-  
+  width: 500px;
+  margin: 0px auto;
   & a {
     text-decoration: none;
   }
@@ -182,7 +182,7 @@ function Form() {
         <StyledDiv>
         <ul className='contact'>
           <li><a href="mailto:emilylarkin11@hotmail.co.uk"><Icon><FontAwesomeIcon icon={faEnvelope} size="2xl"/></Icon>Send us an email</a></li>
-          <li><Icon><FontAwesomeIcon icon={faPhone} size="2xl" /></Icon>0102184299</li>
+          <li><Icon><FontAwesomeIcon icon={faPhone} size="2xl" /></Icon>01562884168</li>
         </ul>
         </StyledDiv>
       </Col>
