@@ -42,7 +42,7 @@ function App() {
       <Router>
         <div>
           <StoreProvider>
-            <Nav />
+            <Nav/>
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/menu" element={<Menu />} />
