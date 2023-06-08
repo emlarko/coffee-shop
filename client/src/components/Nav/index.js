@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { PrimaryNav, MenuLink, Menu, Hamburger } from './NavElement'
 import styled from 'styled-components'
 import Logo from '../../assets/cup-logo.jpg'
+import Auth from '../../utils/auth'
 
 const Image = styled.img `
  width: 100px;
@@ -25,9 +26,18 @@ const Navbar = () => {
           <MenuLink to="/shop" activeStyle>
             Shop
           </MenuLink>
-          <MenuLink to="/login" activeStyle>
-            Login
-          </MenuLink>
+          {
+            Auth.loggedIn() ? (
+                <>
+                <MenuLink onClick = {Auth.logout}>Logout</MenuLink>
+                </>
+            ) : (
+                <MenuLink to="/login" activeStyle>
+                Login
+              </MenuLink>
+            )
+          }
+         
         </Menu>
       <Link to="/"><Image src={Logo}/></Link>
       </PrimaryNav>
