@@ -41,6 +41,10 @@ const StyledText = styled.textarea`
 const StyledDiv = styled.div`
   width: 500px;
   margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   & a {
     text-decoration: none;
   }
@@ -183,6 +187,10 @@ function Form() {
         <ul className='contact'>
           <li><a href="mailto:emilylarkin11@hotmail.co.uk"><Icon><FontAwesomeIcon icon={faEnvelope} size="2xl"/></Icon>Send us an email</a></li>
           <li><Icon><FontAwesomeIcon icon={faPhone} size="2xl" /></Icon>01562884168</li>
+          <li>  <a href="https://bookings.designmynight.com/book?source=partner&venue_id=6086bd6bf3f8486d096dd55f"
+        target="_blank" rel="noopener noreferrer" >
+        <button>Make a Reservation</button>
+        </a></li>
         </ul>
         </StyledDiv>
       </Col>

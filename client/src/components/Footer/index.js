@@ -33,8 +33,8 @@ const Footer = () => {
         121 Worcester Rd, Hagley, DY9 0NG
     </h4>
    <StyledIcon>
-    <li><a href="mailto:emilylarkin11@hotmail.co.uk"><FontAwesomeIcon icon={faEnvelope} size="2xl" className="fa-icon"/></a></li>
-    <li><a href="https://www.instagram.com/cupcoffeeshop/"><FontAwesomeIcon icon={faInstagram} size="2xl" className="fa-icon"/></a></li>
+    <li><a href="mailto:emlarko11@gmail.com"><FontAwesomeIcon icon={faEnvelope} size="2xl" className="fa-icon"/></a></li>
+    <li><a href="https://www.instagram.com/cupcoffeeshop/" target="_blank" rel="noopener noreferrer" ><FontAwesomeIcon icon={faInstagram} size="2xl" className="fa-icon"/></a></li>
     </StyledIcon>
   </StyledFooter>
   )
