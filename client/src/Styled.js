@@ -54,3 +54,10 @@ export const HomeRow = styled.div`
 export const Col = styled.div`
   flex:  ${(props) => props.size};
 `
+
+export const Title = styled.div`
+  font-family: "Bebas Neue", sans-serif;
+  & h1 {
+    font-size: 60px;
+  }
+`

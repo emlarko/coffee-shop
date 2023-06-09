@@ -1,8 +1,6 @@
 import React from "react";
 import styled from 'styled-components'
-import { Container } from "../Styled";
-import { HomeRow } from "../Styled"
-import { Col } from "../Styled"
+import { Container, HomeRow, Col, Title } from "../Styled";
 import Cappuccino from '../assets/cappuccino.jpg'
 import Martini from '../assets/espresso-martini.jpg'
 import Map from '../components/Map'
@@ -12,7 +10,7 @@ const Image = styled.img `
   width: 100%;
   position: relative;
 `
-const Title = styled.div `
+const ImageTitle = styled.div `
 font-family: "Bebas Neue", sans-serif;
 padding: 10px;
 position: absolute;
@@ -53,26 +51,31 @@ color: white;
   }
 `
 
+const Open = styled.div`
+  width: 600px;
+`
+
 const Home = () => {
   return (
     <Container>
       <HomeRow>
         <Image src={Cappuccino}/>
-        <Title>
+        <ImageTitle>
           <h1>Brunch</h1>
           <h3>Coffee / Breakfast / Cake</h3>
-        </Title>
+        </ImageTitle>
         </HomeRow>
         <HomeRow>
         <Image src={Martini}/>
-        <Title>
+        <ImageTitle>
           <h1>Weekend Evening</h1>
           <h3>Craft Beer / Cocktails / Street Food</h3>
-        </Title> 
+        </ImageTitle> 
         </HomeRow>
         <HomeRow>
           <Col size={1}>
-          <h1>Opening Times</h1>
+          <Open>
+          <Title><h1>Opening Times</h1></Title>
           <ul>
             <li>Monday - Thursday   8:30am - 4pm</li>
             <li>Friday  8:30am - 10:00pm</li>
@@ -80,9 +83,10 @@ const Home = () => {
             <li>Sunday  9am - 3pm</li>
             <li>Brunch is served Wednesday - Sunday 9am - 2pm</li>
           </ul>
+          </Open>
           </Col>
           <Col size={1}>
-            
+         <Title><h1>Find Us Here</h1></Title>
           <Map />
           
           </Col>

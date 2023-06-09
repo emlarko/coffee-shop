@@ -5,7 +5,7 @@ import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
 
 import styled from 'styled-components';
-import { Container, Row } from "../Styled";
+import { Container, Row, Title } from "../Styled";
 
 const StyledForm = styled.form`
   min-width: 400px;
@@ -56,7 +56,7 @@ function Signup(props) {
 
   return (
     <Container>
-      <h3>Signup</h3>
+      <Title><h1>Signup</h1></Title>
       <StyledForm onSubmit={handleFormSubmit}>
       <p>Already have an account?</p><Link to="/login">Login Instead</Link>
         <Row>

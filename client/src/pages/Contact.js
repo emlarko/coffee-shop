@@ -4,7 +4,7 @@ import { useMutation } from '@apollo/client';
 import { SEND_MAIL } from '../utils/mutations';
 
 import styled from 'styled-components'
-import { Container, Col, Row } from '../Styled'
+import { Container, Col, Row, Title } from '../Styled'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
@@ -122,7 +122,7 @@ function Form() {
   return (
     <Container>
       <Row>
-        <h3>Contact</h3>
+        <Title><h1>Contact</h1></Title>
       </Row>
         <hr />
         <Row>
