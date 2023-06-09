@@ -7,7 +7,6 @@ const Ul = styled.ul`
   display: none;
   flex-flow: row nowrap;
   display:flex;
-  justify-content: space-around;
   flex-flow: colum nowrap;
   z-index: 10;
   display: none;
@@ -15,6 +14,7 @@ const Ul = styled.ul`
 
   a {
     padding: 0 1.2rem;
+    line-height: 5;
     font-family: "Bebas Neue", sans-serif;
     font-size: 25px;
     height:100vh;
