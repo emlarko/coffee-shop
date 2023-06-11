@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Project 3: Coffee Shop Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Summary
 
-## Available Scripts
+The aim of this project was to create a e-commerce website for a Coffee Shop using MERN, GraphQL and Stripe. The page has information about the Coffee Shop and a Contact Form, as well as a retail page to buy Coffee Beans etc.
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+- [Technology](#technology)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Live Site](#live-site)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technology 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This Project was created with:
 
-### `npm test`
+- MongoDB
+- Express.js
+- React.js
+- Node.js
+- JavaScript
+- GraphQL API
+- Apollo Server
+- Nodemailer
+- Google Maps API
+- Stripe
+- Styled Components
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+After cloning the project to your machine, run the following line of code in your terminal to install the needed packages:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+npm i
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Once the packages have been installed using the above instructions, run the following command in the terminal to seed the database:
 
-### `npm run eject`
+```
+npm run seed
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To start the the applications server, run the following command: 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The User viewing this Coffee Shop website will find a home page first, with a coffee images as well as opening times and a map. 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+After navigating to the Menu page, the User is able to click buttons to see coffee, food and drinks menus. 
 
-## Learn More
+On the Contact page, the User will find a contact form, which when filled out will send an email to owner. There is also a phone number, and links to email and book a table. 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+When visiting the Shop page, the User is able to browse the products sold by the coffee shop and is able to filter by category. They are able to add a product to the cart, as well as click on the product to read a description. On the product detail page, there is a description as well as an option to add or remove from the cart. 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+When adding a product to the cart, if the User is not logged in they will be asked to log in to check out. The User is then able to log in or create an account, and will be redirected back to the shop page. If logged in, the User can checkout and will be redirected to the Stripe checkout page. After filling in their details and checking out, they are then redirected to a Success page and then back to the Home page. 
 
-### Code Splitting
+## Live Site
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+![Screenshot](client/src/assets/coffee-shop-home.png?raw=true "Screenshot")
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Screenshot](client/src/assets/coffee-shop.png?raw=true "Screenshot")
