@@ -160,6 +160,7 @@ const resolvers = {
         <Html lang="en">
           <div>${subject}</div>
           <div>${name}</div>
+          <div>${email}</div>
           <div>${query}</div>
         </Html>
       `
