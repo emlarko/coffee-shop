@@ -53,7 +53,7 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/products/:id" element={<Detail />} />
-                <Route path="success" element={<Success />} />
+                <Route path="/success" element={<Success />} />
               </Routes>
             </StoreProvider>
           </div>
