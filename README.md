@@ -61,7 +61,7 @@ When adding a product to the cart, if the User is not logged in they will be ask
 
 ## Live Site
 
-https://cup-coffee.herokuapp.com/
+https://warm-harbor-00106.herokuapp.com/
 
 ![Screenshot](client/src/assets/coffee-shop-home.png?raw=true "Screenshot")
 
