@@ -55,7 +55,7 @@ const resolvers = {
       throw new AuthenticationError('Not logged in');
     },
     checkout: async (parent, args, context) => {
-      const url = new URL(context.headers.referer).origin;
+      const url = new URL(process.env.PUBLIC_URL, context.headers.referer).origin;
       const order = new Order({ products: args.products });
       const line_items = [];
 
