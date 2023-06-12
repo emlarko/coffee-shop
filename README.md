@@ -49,7 +49,7 @@ To start the the applications server, run the following command:
 npm start
 ```
 
-The User viewing this Coffee Shop website will find a home page first, with a coffee images as well as opening times and a map. 
+The User viewing this Coffee Shop website will find a home page first, with coffee images as well as opening times and a map. 
 
 After navigating to the Menu page, the User is able to click buttons to see coffee, food and drinks menus. 
 
@@ -61,6 +61,7 @@ When adding a product to the cart, if the User is not logged in they will be ask
 
 ## Live Site
 
+https://cup-coffee.herokuapp.com/
 
 ![Screenshot](client/src/assets/coffee-shop-home.png?raw=true "Screenshot")
 
